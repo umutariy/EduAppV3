@@ -42,12 +42,12 @@
             </div>
             <!-- due date -->
             <div class='input-field col s3'>
-              <input class='validate' type="text" name='due_date' required />
+              <input class='validate datepicker' type="text" name='due_date' required />
               <label for='due_date'>Due date</label>
             </div>
             <!-- due time -->
             <div class='input-field col s3'>
-              <input class='validate' type="text" name='due_time' required />
+              <input class='validate timepicker' type="text" name='due_time' required />
               <label for='due_time'>Due time</label>
             </div>
           </div>
@@ -101,8 +101,10 @@
               </div>
             </div>
           </div>
-
-
         </form>
       </fieldset>
     </center>
+
+    <script>
+      $("#car2").clone().insertAfter("div.car_well:last");
+    </script>

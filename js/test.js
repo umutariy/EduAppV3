@@ -15,6 +15,7 @@ function createQuestion()
 function choice()
 {
 	forRadio.style.display="block";
+	question.appendChild()
 }
 
 function text_Input(text)

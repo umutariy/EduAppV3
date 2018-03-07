@@ -41,7 +41,7 @@
                             <label for='email'>Email</label>
                         </div>
                         <div class="input-field col s6">
-                            <select>
+                            <select name="class">
                               <option value="" disabled selected>Select User Type</option>
                               <option value="1">Administrator</option>
                               <option value="2">Student</option>
@@ -61,3 +61,4 @@
             </form>
         </center>
     </main>
+
