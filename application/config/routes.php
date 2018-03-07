@@ -60,6 +60,9 @@ $route['index']='appcontroller/index';
 $route['signup2']='appcontroller/signup2';
 $route['student']='appcontroller/student_dashboard';
 $route['child']='appcontroller/view_child';
+$route['register']='appcontroller/registration';
+$route['login']='appcontroller/login';
+$route['logout']='appcontroller/logout';
 
 // QuestionController
 $route['test']='questioncontroller/set_questions_trial';
@@ -69,5 +72,6 @@ $route['answer']='questioncontroller/answer_questions';
 // MessageController
 $route['message']='messagecontroller/message';
 $route['send_message']='messagecontroller/send_message';
+$route['view']='messagecontroller/view_message';
 
 

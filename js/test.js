@@ -1,5 +1,6 @@
 
 var question = document.getElementById("questions");
+var butns= document.getElementById("btns");
 var forRadio = document.getElementById("choice");
 var forText = document.getElementById("text_input")
 var option = document.getElementById("option");
@@ -15,7 +16,7 @@ function createQuestion()
 function choice()
 {
 	forRadio.style.display="block";
-	question.appendChild()
+	question.appendChild(butns);
 }
 
 function text_Input(text)

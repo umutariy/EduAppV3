@@ -11,7 +11,7 @@
         </ul>
         <a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown">
           <i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>  
-          <a href = "index.html" style="background-color: transparent;" class="right">Sign Out</a>
+          <a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
         </div>
       </nav>
 
@@ -33,14 +33,20 @@
             </div>
             <div class="row">
               <div class='input-field col s12'>
-                <TextArea class='validate' type="text" name='msg' required> </TextArea>
+                <TextArea class='validate materialize-textarea' type="text" name='msg' required> </TextArea>
                 <label for='msg'>Message</label>
               </div>
             </div>
             <div class="row">
               <div class='input-field col s6'>
-                <input class='validate' type="text" name='recipient' required />
-                <label for='recipient'>Add Recipient</label>
+                <!-- <input class='validate' type="text" name='recipient' required />
+                <label for='recipient'>Add Recipient</label> -->
+                <select name="recipient">
+                  <option value="" disabled selected>Recipient</option>
+                  <option value="Primary 1">Primary 1</option>
+                  <option value="Primary 2">Primary 2</option>
+                  <option value="Primary 3">Primary 3</option>
+                </select>
               </div>
             </div>
             <div class='row'>

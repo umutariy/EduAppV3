@@ -73,9 +73,9 @@
           <!--************* Questions *****************-->
           <div class="row input-field col s12" id="questions" style="display: none">
             <!-- mutltiple choice -->
-            <div class="input-field col s6">
+            <div class="input-field col s6" id="btns">
               <a id="option" class="btn" onclick="choice()" style="margin-left: -50px"><i class="fa fa-dot-circle-o"></i> Choice</a>
-              <a id="text" class="btn" onclick="text_Input()"></i>Text</a>
+              <a id="text" class="btn" onclick="text_Input()">Text</a>
             </div>
             
             <!-- Multiple choice question -->
@@ -105,6 +105,6 @@
       </fieldset>
     </center>
 
-    <script>
+    <!-- <script>
       $("#car2").clone().insertAfter("div.car_well:last");
-    </script>
+    </script> -->

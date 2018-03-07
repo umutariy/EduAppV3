@@ -6,7 +6,7 @@
             <h3 style="color: #0097a7">Welcome to EduApp</h3>
 
             <!-- Form -->
-            <form action="" method="POST">
+            <?php echo form_open("register"); ?>
                 <div  class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 50px; solid #EEE;">
                     <div class="section"></div>
                     
@@ -41,21 +41,21 @@
                             <label for='email'>Email</label>
                         </div>
                         <div class="input-field col s6">
-                            <select name="class">
+                            <select name="status">
                               <option value="" disabled selected>Select User Type</option>
-                              <option value="1">Administrator</option>
-                              <option value="2">Student</option>
-                              <option value="3">Teacher</option>
-                              <option value="4">Parent</option>
+                              <option value="Administrator">Administrator</option>
+                              <option value="Student">Student</option>
+                              <option value="Teacher">Teacher</option>
+                              <option value="Parent">Parent</option>
                             </select>
                         </div>
                     </div>
                     
                     <!-- Signup button -->
                     <div class='row'>
-                        <a href="index"><button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Sign Up
                             <i class="material-icons right">send</i>
-                        </button></a>        
+                        </button>       
                     </div> <!-- end of signup button -->
                 </div> <!-- end of the entire div -->
             </form>

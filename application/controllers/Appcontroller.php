@@ -11,10 +11,10 @@ class Appcontroller extends CI_Controller
 	function __construct(){
 
 		parent::__construct();
-		// $this->load->model('questionsmodel');
+		$this->load->model('usermodel');
 		$this->load->helper('form');
 		$this->load->helper('url');
-		//$this->load->helper('dump');
+		$this->load->library('session');
 	}
 
   	/**
@@ -35,6 +35,7 @@ class Appcontroller extends CI_Controller
 		$this->load->view('templates/footer'); 
 
 	}
+
 
 	/**
 	* This function loads the signup view 
@@ -93,6 +94,51 @@ class Appcontroller extends CI_Controller
 		//loads the footer
 		$this->load->view('templates/footer'); 
 	}
+
+	// login page
+	public function login()
+	{
+		$email=$this->input->post('email');
+		$password=md5($this->input->post('password'));
+
+		$result=$this->usermodel->login($email,$password);
+		if($result) 
+		{
+			//$this->welcome(); //dashboard
+
+			//loads the header
+			$this->load->view('templates/header'); 
+
+			// Loads the Parent View Child Page
+			$this->load->view('parent_viewchild');
+
+			//loads the footer
+			$this->load->view('templates/footer');
+		}
+		else 
+		{
+			$this->index();
+		}
+	}
+
+    /**
+    * This function registers a user
+    **/
+	public function registration()
+	{
+		$this->usermodel->registerUser();
+		$this->index();
+
+	}
+
+    public function logout()
+    {
+    	$this->usermodel->signout(); 
+
+		//loads the login page
+    	$this->index();
+
+    }
 
 	
 }

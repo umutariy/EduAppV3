@@ -5,7 +5,7 @@
           <a href="#" class="brand-logo center"><i class="material-icons prefix">account_circle</i></a>
           <a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown">
           <i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>  
-          <a href = "index.html" style="background-color: transparent;" class="right">Sign Out</a>
+          <a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
       </div>
     </nav>
 
@@ -19,9 +19,9 @@
         
           <!-- View Records -->
           <div class='row'>
-            <button class="btn btn-block waves-effect waves-light" type="submit" name="records">View Records
+            <a href="#"><button class="btn btn-block waves-effect waves-light" type="submit" name="records">View Records
               <i class="material-icons right">assignment</i>
-            </button>         
+            </button></a>         
           </div>
          
          <!-- Start Assignment -->
@@ -33,9 +33,9 @@
 
          <!-- Message from Teacher -->
           <div class='row'>
-            <button class="btn btn-block waves-effect waves-light" type="submit" name="message">View Message from teacher
+            <a href="view"><button class="btn btn-block waves-effect waves-light" type="submit" name="message">View Message from teacher
               <i class="material-icons right">email</i>
-            </button>         
+            </button></a>         
           </div>
         <!-- </form> -->
 

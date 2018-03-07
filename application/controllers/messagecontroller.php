@@ -57,5 +57,25 @@ class MessageController extends CI_Controller
 		$this->load->view('Teacher_sendMessage');
 
 	}
+
+	/**
+	* This method loads the message in the student's dashboard 
+	**/
+	public function view_message($page='Message')
+	{
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
+
+		//loads the header
+		$this->load->view('templates/header', $data); 
+
+		//Loading View
+		$data['questions'] = $this->messagemodel->view_message();
+		$this->load->view('view_message');
+		
+		//loads the footer
+		$this->load->view('templates/footer'); 
+	}
+
 }
 ?>
