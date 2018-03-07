@@ -29,7 +29,6 @@ class MessageModel extends CI_Model
 	{
 		// selects the query from the database
 		$query=$this->db->get('message');
-		echo $query->result_array();
 		return $query->result_array();
 	}
 }
