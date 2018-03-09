@@ -12,8 +12,8 @@
 	<h3 style="color: #0097a7">Start Assignment</h3>
 
 	<!-- form -->
-	<!-- <?php //echo form_open('answer'); ?> -->
-	<form action="answer" method="POST"></form>
+	<?php echo form_open('answer'); ?>
+	<!-- <form action="answer" method="POST"></form> -->
 
 	<?php foreach($questions as $rows) { ?>
 	<?php $ans_array=array($rows['Answer_1'], $rows['Answer_2'], $rows['Answer_3']);

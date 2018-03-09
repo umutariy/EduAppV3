@@ -37,6 +37,16 @@ class QuestionsModel extends CI_Model
 	*/
 	public function answer_questions($data)
 	{
+		$answer="";
+		$i=4;
+		while($i!==0)
+		{
+			$answer=$this->input->post($i);
+			$data = array(
+				'Question_Id' => $this->input->post('Question_Id'),
+				'answer' => $answer
+				);
+		}
 		$query=$this->db->insert('answer', $data);
 	}
 

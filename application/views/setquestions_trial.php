@@ -3,7 +3,7 @@
     <div class="nav-wrapper" style="background-color: #0097a7">
       <a href="#" class="brand-logo center"><i class="material-icons prefix">account_circle</i></a>
       <ul id = "dropdown" class = "dropdown-content">
-        <li><a href="#">Students</a></li>
+        <li><a href="getStudent">Students</a></li>
         <li><a href="test">Assignments</a></li>
         <li><a href="message">Message</a></li>
         <li><a href="#">Grades</a></li>

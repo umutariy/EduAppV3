@@ -4,7 +4,7 @@
         <a href="#" class="brand-logo center"><i class="material-icons prefix">account_circle</i></a>
         <!-- <i class="material-icons">list</i> -->
         <ul id = "dropdown" class = "dropdown-content">
-          <li><a href="#">Students</a></li>
+          <li><a href="getStudent">Students</a></li>
           <li><a href="test">Assignments</a></li>
           <li><a href="message">Message</a></li>
           <li><a href="#">Grades</a></li>
@@ -43,9 +43,9 @@
                 <label for='recipient'>Add Recipient</label> -->
                 <select name="recipient">
                   <option value="" disabled selected>Recipient</option>
-                  <option value="Primary 1">Primary 1</option>
-                  <option value="Primary 2">Primary 2</option>
-                  <option value="Primary 3">Primary 3</option>
+                  <option value="1">Primary One</option>
+                  <option value="2">Primary Two</option>
+                  <option value="3">Primary Three</option>
                 </select>
               </div>
             </div>

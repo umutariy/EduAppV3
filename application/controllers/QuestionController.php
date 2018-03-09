@@ -115,21 +115,12 @@ class QuestionController extends CI_Controller
 		// 	$i++;	
 		// }
 
-		$answer="";
-		$i=4;
-		while($i!==0)
-		{
-			$answer=$this->input->post($i);
-			$data = array(
-				'Question_Id' => $this->input->post('Question_Id'),
-				'answer' => $answer
-				);
-		}
+		
 		//Transfering data to Model
 		$this->questionsmodel->answer_questions($data);
 		$data['message'] = 'Data Inserted Successfully';
 		//Loading View
-		$this->load->view('students_dashboard');
+		$this->load->view('students_dashboard',$data);
 	}
 }
 ?>

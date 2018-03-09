@@ -14,6 +14,7 @@ class MessageController extends CI_Controller
 		$this->load->model('messagemodel');
 		$this->load->helper('form');
 		$this->load->helper('url');
+		$this->load->library('session');
 		//$this->load->helper('dump');
 	}
 
@@ -53,15 +54,35 @@ class MessageController extends CI_Controller
 		$this->messagemodel->send_message($data); 
 
 		echo "<script>alert('Message sent successfully....!!!! ');</script>";
-		// Reloading after submit.
-		$this->load->view('Teacher_sendMessage');
+		// // Reloading after submit.
+		// $this->load->view('Teacher_sendMessage');
+		$this->retrieve_message();
 
 	}
 
 	/**
 	* This method loads the message in the student's dashboard 
 	**/
-	public function view_message($page='Message')
+	public function view_message($messageId)
+	{
+		// Capitalize the first letter
+		// $data['title'] = ucfirst($page); 
+
+		//loads the header
+		$this->load->view('templates/header'); 
+
+		//Loading View
+		$data['table'] = $this->messagemodel->view_message($messageId);
+		$this->load->view('view_message', $data);
+		
+		//loads the footer
+		$this->load->view('templates/footer'); 
+	}
+
+	/**
+	* This method loads the list of the messages in the student's dashboard 
+	**/
+	public function retrieve_message($page='Message')
 	{
 		// Capitalize the first letter
 		$data['title'] = ucfirst($page); 
@@ -70,8 +91,8 @@ class MessageController extends CI_Controller
 		$this->load->view('templates/header', $data); 
 
 		//Loading View
-		$data['questions'] = $this->messagemodel->view_message();
-		$this->load->view('view_message');
+		$data['table'] = $this->messagemodel->retrieve_message();
+		$this->load->view('retrieve_message', $data);
 		
 		//loads the footer
 		$this->load->view('templates/footer'); 

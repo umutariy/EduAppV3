@@ -53,12 +53,12 @@
 
               <div class="row" id="std">
                 <div class="input-field col s6" id="22e" style="display: none;">
-                    <select name="status" id="selectMode">
+                    <select name="class" id="selectMode">
                       <option value="" disabled selected>Select Class</option>
-                      <option value="Primary One">Primary One</option>
-                      <option value="Primary Two">Primary Two</option>
-                      <option value="Primary Three">Primary Three</option>
-                      <option value="Primary Four">Primary Four</option>
+                      <option value="1">Primary One</option>
+                      <option value="2">Primary Two</option>
+                      <option value="3">Primary Three</option>
+                      <option value="4">Primary Four</option>
                   </select>
               </div>    
           </div>

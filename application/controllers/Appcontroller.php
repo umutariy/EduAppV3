@@ -104,16 +104,39 @@ class Appcontroller extends CI_Controller
 		$result=$this->usermodel->login($email,$password);
 		if($result) 
 		{
-			//$this->welcome(); //dashboard
+			//if STUDENT
+			if ($this->session->Status=="Student") {
+				
+				//loads the header
+				$this->load->view('templates/header');
+				//Loads the student dashboard
+				$this->load->view('Students_Dashboard');
+				//loads the footer
+				$this->load->view('templates/footer');
 
-			//loads the header
-			$this->load->view('templates/header'); 
+			}
 
-			// Loads the Parent View Child Page
-			$this->load->view('parent_viewchild');
+			//IF PARENT
+			elseif ($this->session->Status=="Parent") 
+			{
+				//loads the header
+				$this->load->view('templates/header'); 
+				// Loads the Parent View Child Page
+				$this->load->view('parent_viewchild');
+				//loads the footer
+				$this->load->view('templates/footer');
+			}
 
-			//loads the footer
-			$this->load->view('templates/footer');
+			//IF TEACHER
+			elseif ($this->session->Status=="Teacher") 
+			{
+				//loads the header
+				$this->load->view('templates/header'); 
+				// Loads the teacher View student Page
+				$this->load->view('Teacher_viewStudent');
+				//loads the footer
+				$this->load->view('templates/footer');
+			}
 		}
 		else 
 		{
@@ -124,21 +147,41 @@ class Appcontroller extends CI_Controller
     /**
     * This function registers a user
     **/
-	public function registration()
+    public function registration()
+    {
+    	$this->usermodel->registerUser();
+    	$this->index();
+
+    }
+
+	/**
+	* This functions logs out the user
+	**/
+	public function logout()
 	{
-		$this->usermodel->registerUser();
+		$this->usermodel->signout(); 
+
+		//loads the login page
 		$this->index();
 
 	}
 
-    public function logout()
-    {
-    	$this->usermodel->signout(); 
+    /**
+	* This functions lits the students in the different classes
+	**/
+	public function get_students()
+	{
+		$data['table'] = $this->usermodel->students();
 
-		//loads the login page
-    	$this->index();
+    	//loads the header
+		$this->load->view('templates/header');
 
-    }
+    	// Loads the View 
+		$this->load->view('Teacher_viewStudent', $data);
+
+		//loads the footer
+		$this->load->view('templates/footer');
+	}
 
 	
 }

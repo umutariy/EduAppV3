@@ -33,7 +33,7 @@
 
          <!-- Message from Teacher -->
           <div class='row'>
-            <a href="view"><button class="btn btn-block waves-effect waves-light" type="submit" name="message">View Message from teacher
+            <a href="retrieve_message"><button class="btn btn-block waves-effect waves-light" type="submit" name="message">View Message from teacher
               <i class="material-icons right">email</i>
             </button></a>         
           </div>
