@@ -72,6 +72,12 @@ class UserModel extends CI_Model
                 'ClassId'=>$this->input->post('class'));
             $this->db->insert('student',$data1);
         }
+        elseif (($this->input->post('status'))=='Teacher') {
+          $data1=array(
+                'TeacherId'=>$last_id,
+                'ClassId'=>$this->input->post('class'));
+            $this->db->insert('teacher',$data1);
+        }
         
     }
 
@@ -100,15 +106,22 @@ class UserModel extends CI_Model
     **/
     public function students()
     {
-        $this->db->select('FirstName', 'LastName', 'Email'); 
+
+        $this->db->select('FirstName, LastName, Email'); 
         $this->db->from('users');
         $this->db->join('student', 'users.UserId = student.StudentId');
+        $this->db->join('teacher', 'teacher.ClassId = student.ClassId');
         $query = $this->db->get();
 
         if($query->num_rows() > 0) {
             $results = $query->result();
+            return $results;
         }
-        return $results;
+        else
+        {
+          return false;
+        }
+        
     }
 }
 

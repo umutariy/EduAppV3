@@ -6,8 +6,8 @@
 		<a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown">
 			<i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Back</a>  
 			<a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
-		</div>
-	</nav>
+	</div>
+</nav>
 	<center>
 		<fieldset>
 			<div class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 50px; solid #EEE;">
@@ -15,29 +15,17 @@
 
 				<table class="striped">
 					
-					<!-- <?php
-					// foreach ( $table as $blog )
-					{
-						?>
-						<!-- <tr> -->
-						<!-- $tit= <?php// echo $blog['Title']?>; -->
-						<!-- $sub = <?php //echo $blog['Subject']?>; -->
-						<!-- $msg = <?php //echo $blog['Message']?>; -->
-						<!-- </tr> -->
-						<!-- <?php 
-					}
-
-					?> -->
 
 					<?php
 
 					foreach ( $table as $blog )
 					{
 						
-						$tit= $blog['Title'];
-						$sub = $blog['Subject'];
-						$msg = $blog['Message']; 
+						$tit= $blog->Title;
+						$sub = $blog->Subject;
+						$msg = $blog->Message; 
 					}
+
 					?>
 					
 					<thead>

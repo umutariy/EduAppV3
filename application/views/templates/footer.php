@@ -37,6 +37,6 @@
 			});
 
 		</script>
-		<center><em>&copy; 2018</em></center>
+		<!-- <center><em>&copy; 2018</em></center> -->
 	</body>
 	</html>

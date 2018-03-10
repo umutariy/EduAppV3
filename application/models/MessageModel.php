@@ -28,10 +28,13 @@ class MessageModel extends CI_Model
 	public function view_message($messageId)
 	{
 		// selects the query from the database
-		// $query=$this->db->get('message');
-		$query=$this->db->query("SELECT Title, Subject, Message FROM message WHERE MessageId=".$messageId);
-		return $query->result_array();
-		return $query->result_array();
+		// $query=$this->db->query("SELECT Title, Subject, Message FROM message WHERE MessageId=".$messageId);
+		// return $query->result_array();
+		$this->db->select('Title, Subject, Message'); 
+  		$this->db->from('message');
+  		$this->db->where('MessageId = '.$messageId);
+  		$query = $this->db->get();
+		return $query->result();
 	}
 
 	/**
@@ -39,35 +42,18 @@ class MessageModel extends CI_Model
 	*/
 	public function retrieve_message()
 	{
-		// // selects the query from the database
-		// $query1=$this->db->get('student');
-		// return $query1->result_array();
 
-		// //message
-		// $query=$this->db->get('message');
+		$id=$this->session->userdata('UserId');
+		// $query=$this->db->query("SELECT Date_Time, Subject FROM message join student On student.classId=message.Recipient WHERE studentId=".$id);
 		// return $query->result_array();
 
-		 
-		$query=$this->db->query("SELECT Date_Time, Subject FROM message join student On student.classId=message.Recipient WHERE studentId=5");
-		return $query->result_array();
-		// $this->db->select('Date','message'); 
-  //       $this->db->from('message');
-  //       $this->db->join('student.classId = message.recipient');
-  //       $this->db->where('studentId=5');
-  //       $query = $this->db->get();
-  //       return $query->result_array();
 
-		
+		$this->db->select('Date_Time, Subject'); 
+  		$this->db->from('message');
+  		$this->db->join('student', 'student.classId = message.Recipient');
+  		$this->db->where('studentId='.$id);
+  		$query = $this->db->get();
+  		return $query->result();
 
-		// if ($this->session->userId==$row['studentId']) {
-		// 	# code...
-		// }
-
-		//gets the id
-		//find the student ID
-		//select * from users get id and status
-		//student table and get the id
-
-	
 	}
 }

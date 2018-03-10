@@ -169,13 +169,15 @@ class Appcontroller extends CI_Controller
     /**
 	* This functions lits the students in the different classes
 	**/
-	public function get_students()
+	public function get_students($page='students')
 	{
-		$data['table'] = $this->usermodel->students();
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
 
     	//loads the header
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 
+		$data['table'] = $this->usermodel->students();
     	// Loads the View 
 		$this->load->view('Teacher_viewStudent', $data);
 

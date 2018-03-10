@@ -22,8 +22,8 @@
 					{
 						?>
 						<tr>
-							<td><?php echo $blog['Date_Time']?></td>
-							<td><a href="view/4"><?php echo $blog['Subject']?></td></a> 
+							<td><?php echo $blog->Date_Time?></td>
+							<td><a href="view/4"><?php echo $blog->Subject?></td></a> 
 							<!-- work on the view/...? -->
 						</tr>
 						<?php

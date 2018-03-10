@@ -10,7 +10,7 @@
       </ul>
       <a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown">
         <i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>  
-        <a href = "index.html" style="background-color: transparent;" class="right">Sign Out</a>
+        <a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
       </div>
     </nav>
 

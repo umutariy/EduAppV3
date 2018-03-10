@@ -11,8 +11,8 @@
     <li><a href="#">Grades</a></li>
   </ul>
   <a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown">
-    <i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>	
-    <!-- <i class="material-icons">list</i> -->
+    <i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>  
+    <a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
   </div>
 </nav>
 
@@ -28,14 +28,13 @@
     <th>Email</th>
   </tr>
   <?php
-  foreach ( $table as &$blog )
+  foreach ( $table as $blog )
   {
-    $blog     = get_object_vars($blog);
     ?>
     <tr>
-      <td><?php echo $blog['FirstName']?></td>
-      <td><?php echo $blog['LastName']?></td>
-      <td><?php echo $blog['Email']?></td>
+      <td><?php echo $blog->FirstName?></td>
+      <td><?php echo $blog->LastName?></td>
+      <td><?php echo $blog->Email?></td>
     </tr>
     <?php
   }
