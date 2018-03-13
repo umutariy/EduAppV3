@@ -28,8 +28,6 @@ class MessageModel extends CI_Model
 	public function view_message($messageId)
 	{
 		// selects the query from the database
-		// $query=$this->db->query("SELECT Title, Subject, Message FROM message WHERE MessageId=".$messageId);
-		// return $query->result_array();
 		$this->db->select('Title, Subject, Message'); 
   		$this->db->from('message');
   		$this->db->where('MessageId = '.$messageId);
@@ -44,11 +42,7 @@ class MessageModel extends CI_Model
 	{
 
 		$id=$this->session->userdata('UserId');
-		// $query=$this->db->query("SELECT Date_Time, Subject FROM message join student On student.classId=message.Recipient WHERE studentId=".$id);
-		// return $query->result_array();
-
-
-		$this->db->select('Date_Time, Subject'); 
+		$this->db->select('Date_Time, Subject, MessageId'); 
   		$this->db->from('message');
   		$this->db->join('student', 'student.classId = message.Recipient');
   		$this->db->where('studentId='.$id);

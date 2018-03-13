@@ -104,7 +104,7 @@ class Appcontroller extends CI_Controller
 		$result=$this->usermodel->login($email,$password);
 		if($result) 
 		{
-			//if STUDENT
+			//IF STUDENT
 			if ($this->session->Status=="Student") {
 				
 				//loads the header
@@ -133,7 +133,7 @@ class Appcontroller extends CI_Controller
 				//loads the header
 				$this->load->view('templates/header'); 
 				// Loads the teacher View student Page
-				$this->load->view('Teacher_viewStudent');
+				$this->load->view('setquestions_trial');
 				//loads the footer
 				$this->load->view('templates/footer');
 			}

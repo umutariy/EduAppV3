@@ -74,7 +74,7 @@ $route['answer']='questioncontroller/answer_questions';
 // MessageController
 $route['message']='messagecontroller/message';
 $route['send_message']='messagecontroller/send_message';
-$route['view/(:any)']='messagecontroller/view_message/$1';
+$route['view/(:num)']='messagecontroller/view_message/$1';
 $route['retrieve_message']='messagecontroller/retrieve_message';
 
 

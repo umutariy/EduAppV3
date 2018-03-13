@@ -56,7 +56,7 @@ class MessageController extends CI_Controller
 		echo "<script>alert('Message sent successfully....!!!! ');</script>";
 		// // Reloading after submit.
 		// $this->load->view('Teacher_sendMessage');
-		$this->retrieve_message();
+		$this->message();
 
 	}
 
@@ -65,8 +65,6 @@ class MessageController extends CI_Controller
 	**/
 	public function view_message($messageId)
 	{
-		// Capitalize the first letter
-		// $data['title'] = ucfirst($page); 
 
 		//loads the header
 		$this->load->view('templates/header'); 

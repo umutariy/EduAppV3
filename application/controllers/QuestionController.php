@@ -69,14 +69,14 @@ class QuestionController extends CI_Controller
 	*/
 	public function quiz($page='Assignment')
 	{
-		// //loads the header
-		// $this->load->view('templates/header', $page); 
+		//loads the header
+		$this->load->view('templates/header', $page); 
 
 		$data['questions'] = $this->questionsmodel->return_questions();
 		$this->load->view('students_questions', $data);
 
-		// //loads the footer
-		// $this->load->view('templates/footer'); 
+		//loads the footer
+		$this->load->view('templates/footer'); 
 
 	}
 
@@ -87,33 +87,6 @@ class QuestionController extends CI_Controller
 	{
 		
 		//Setting values for database table columns
-
-		// $ar = array();
-		// foreach ($_POST as $key => $value) {
-		// 	$ar[] = $value;
-		// }
-		// $c = count($_REQUEST);
-		// $i=1;
-		// $qid ="";
-		// $answer="";
-		// while($c>0)
-		// {
-		// 	if (($i)/2 !=0) {
-		// 		$qid = $ar[$i];
-		// 	}
-		// 	else
-		// 	{
-		// 		$answer = $ar[$i];
-		// 		$data = array(
-		// 			'Question_Id' => $qid,
-		// 			'answer' => $answer
-		// 			);
-		// 	//Transfering data to Model
-		// 		$this->questionsmodel->answer_questions($data);
-		// 	}
-		// 	//$answer = post($i);
-		// 	$i++;	
-		// }
 
 		
 		//Transfering data to Model
