@@ -21,7 +21,7 @@
   <h4 style="color: #0097a7">Students in your Class</h4>
 </center>
 
-<table class="striped">
+<table class="striped" bgcolor="grey">
   <tr>
     <th>FirstName</th>
     <th>LastName</th>

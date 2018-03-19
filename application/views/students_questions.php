@@ -3,8 +3,8 @@
 <nav>
 	<div class="nav-wrapper" style="background-color: #0097a7">
 		<a href="#" class="brand-logo center"><i class="material-icons prefix">account_circle</i></a>
-		<a class = "btn dropdown-button" style="background-color: transparent;" href = "#" data-activates = "dropdown"></a>
-		<i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Academics</a>  
+		<a class = "btn dropdown-button" style="background-color: transparent;" href = "<?php echo base_url().'index.php/student'?>" data-activates = "dropdown">
+		<i class = "mdi-navigation-arrow-drop-down right material-icons"></i>Back</a>  
 		<a href = "logout" style="background-color: transparent;" class="right">Sign Out</a>
 	</div>
 </nav>
