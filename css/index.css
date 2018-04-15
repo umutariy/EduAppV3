@@ -42,3 +42,7 @@ body{
   color: #0097a7;
   margin-top: 5%;
 }
+
+#par {
+  opacity:0.5;
+}

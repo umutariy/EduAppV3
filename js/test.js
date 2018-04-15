@@ -31,14 +31,42 @@ function text_Input(text)
 function displayClass() 
 {
 	var selectValue = document.getElementById("selectMode").value;
-	if (selectValue==="Student" || selectValue==="Teacher") 
+
+	//Student
+	if (selectValue==="Student") 
 	{
-		document.getElementById("22e").style.display = "block";
+		document.getElementById("class").style.display = "block";
+		document.getElementById("gender").style.display = "block";
+	}
+	else
+	{
+		document.getElementById("class").style.display = "none";
+		document.getElementById("gender").style.display = "none";
+	}
+
+	//Parent
+	if (selectValue==="Parent") 
+	{
+		document.getElementById("occupation").style.display = "block";
 
 	}
 	else
 	{
-		document.getElementById("22e").style.display = "none";
+		document.getElementById("occupation").style.display = "none";
+
+	}
+
+	//Teacher
+	if (selectValue==="Teacher") 
+	{
+		document.getElementById("class").style.display = "block";
+		document.getElementById("maritalstatus").style.display = "block";
+
+	}
+	else
+	{
+		//document.getElementById("class").style.display = "none";
+		document.getElementById("maritalstatus").style.display = "none";
 	}
 
 }
