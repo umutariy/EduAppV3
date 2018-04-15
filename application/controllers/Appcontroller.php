@@ -185,6 +185,47 @@ class Appcontroller extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	
+	public function getClass()
+	{
+		$this->usermodel->selectClass();
+	}
+
+	/**
+	* This function loads the admin view
+	*/
+	public function adminPage($page='Administrator')
+	{
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
+
+		//loads the header
+		$this->load->view('templates/header', $data); 
+
+        //loads the Login Page
+		$this->load->view('admin');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+
+	}
+
+	/**
+	* This function loads the parent dashboar
+	*/
+	public function parent_page($page='Parent')
+	{
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
+
+		//loads the header
+		$this->load->view('templates/header', $data); 
+
+        //loads the Login Page
+		$this->load->view('parent_dashboard');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+
+	}
 }
 ?>

@@ -1,3 +1,4 @@
+  <body class="img">
     <!-- Navigation Bar -->
     <nav>
       <div class="nav-wrapper" style="background-color: #0097a7">
@@ -20,7 +21,7 @@
       <center>
         <h4 style="color: #0097a7">Send Message</h4>
         <fieldset style="width:150" align="center" class="fieldset">
-        <form action="send_message" method="POST">
+          <form action="send_message" method="POST">
             <div class="row">
               <div class='input-field col s6'>
                 <input class='validate' type="text" name='title' required />

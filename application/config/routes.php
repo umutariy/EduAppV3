@@ -64,7 +64,9 @@ $route['register']='appcontroller/registration';
 $route['login']='appcontroller/login';
 $route['logout']='appcontroller/logout';
 $route['getStudent']='appcontroller/get_students';
-
+$route['getClass']='appcontroller/getClass';
+$route['admin']='appcontroller/adminPage';
+$route['parent']='appcontroller/parent_page';
 
 // QuestionController
 $route['test']='questioncontroller/set_questions_trial';
@@ -77,4 +79,6 @@ $route['send_message']='messagecontroller/send_message';
 $route['view/(:num)']='messagecontroller/view_message/$1';
 $route['retrieve_message']='messagecontroller/retrieve_message';
 
+//testing controller
+$route['testing']='Unit_testing/index';
 
