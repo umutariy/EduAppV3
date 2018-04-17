@@ -227,5 +227,6 @@ class Appcontroller extends CI_Controller
 		$this->load->view('templates/footer'); 
 
 	}
+   
 }
 ?>

@@ -13,31 +13,47 @@
     
     <center>
       <h4 style="color: #0097a7">Your Dashboard</h4>
-      <fieldset style="width:150" align="center" class="fieldset">
-
-        <!-- <form method="" action="index.php/quiz1"> -->
+     
+        <div class="row">
+    <div class="col s3 ">
+      <div class="card">
+        <div class="card-image">
+<!--          <i class="material-icons center" style="font-size: 300px; color:#26a69a">assignment</i>-->
+            <img src="<?php echo base_url('images/assignment.png');?>" >
+        </div>
         
-        <!-- View Records -->
-        <div class='row'>
+        <div class="card-action">
           <a href="#"><button class="btn btn-block waves-effect waves-light" type="submit" name="records">View Records
-            <i class="material-icons right">assignment</i>
-          </button></a>         
+          </button></a>      
+        </div>
+      </div>
+    </div>
+            <!-- Start Assignment -->
+            <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+            <img src="<?php echo base_url('images/edit.png');?>" >
         </div>
         
-        <!-- Start Assignment -->
-        <div class='row'>
+        <div class="card-action">
           <a href="students_questions"><button class="btn btn-block waves-effect waves-light" type="submit" name="assignment">Start Assignment
-            <i class="material-icons right">mode_edit</i>
-          </button></a>        
+          </button></a>      
         </div>
-
-        <!-- Message from Teacher -->
-        <div class='row'>
-          <a href="retrieve_message"><button class="btn btn-block waves-effect waves-light" type="submit" name="message">View Message from teacher
-            <i class="material-icons right">email</i>
-          </button></a>         
+      </div>
+    </div>
+            <!-- Message from Teacher -->
+            <div class="col s3">
+      <div class="card">
+        <div class="card-image">
+            <img src="<?php echo base_url('images/email.jpg');?>" >
         </div>
-        <!-- </form> -->
-
-      </fieldset>
+        
+        <div class="card-action">
+          <a href="retrieve_message"><button class="btn btn-block waves-effect waves-light" type="submit" name="assignment">View Message from teacher
+          </button></a>      
+        </div>
+      </div>
+    </div>
+  </div>
+          
     </center>

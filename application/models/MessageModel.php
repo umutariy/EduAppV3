@@ -19,7 +19,7 @@ class MessageModel extends CI_Model
 	*/
 	public function send_message($data)
 	{
-		$query=$this->db->insert('message', $data);
+		$query=$this->db->insert('messages', $data);
 	}
 
 	/**
@@ -29,7 +29,7 @@ class MessageModel extends CI_Model
 	{
 		// selects the query from the database
 		$this->db->select('Title, Subject, Message'); 
-  		$this->db->from('message');
+  		$this->db->from('messages');
   		$this->db->where('MessageId = '.$messageId);
   		$query = $this->db->get();
 		return $query->result();
@@ -43,8 +43,8 @@ class MessageModel extends CI_Model
 
 		$id=$this->session->userdata('UserId');
 		$this->db->select('Date_Time, Subject, MessageId'); 
-  		$this->db->from('message');
-  		$this->db->join('student', 'student.classId = message.Recipient');
+  		$this->db->from('messages');
+  		$this->db->join('students', 'students.classId = messages.Recipient_Id');
   		$this->db->where('studentId='.$id);
   		$query = $this->db->get();
   		return $query->result();

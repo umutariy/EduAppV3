@@ -20,7 +20,7 @@ class QuestionsModel extends CI_Model
 	public function return_questions()
 	{
 		// selects the query from the database
-		$query=$this->db->get('assignment');
+		$query=$this->db->get('questions');
 		return $query->result_array();
 	}
 
@@ -29,7 +29,7 @@ class QuestionsModel extends CI_Model
 	*/
 	public function set_questions($data)
 	{
-		$query=$this->db->insert('assignment', $data);
+		$query=$this->db->insert('questions', $data);
 	}
 
 	/**

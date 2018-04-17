@@ -1,7 +1,7 @@
---Create Database
+
 CREATE DATABASE YU36912018;
 
---USE YU36912018;
+
 
 -- Create table Users
 CREATE TABLE Users

@@ -76,7 +76,7 @@ class UserModel extends CI_Model
           $this->db->insert('students',$data1);
       }
       //if status is teacher insert into teacher table
-      if (($this->input->post('status'))=='Teacher') 
+      elseif (($this->input->post('status'))=='Teacher') 
       {
         //insert into teacher
         $data1=array(
@@ -91,7 +91,7 @@ class UserModel extends CI_Model
         $this->db->insert('teacher_class',$data2);
       }
       //if status is student insert into student table
-      if (($this->input->post('status'))=='Parent') 
+      elseif (($this->input->post('status'))=='Parent') 
       {
         $data1=array(
           'ParentId'=>$last_id,

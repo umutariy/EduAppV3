@@ -57,7 +57,7 @@
 
         <!-- Class -->
           <div class="input-field col s6" id="class" style="display: none;">
-            <select name="classes">
+            <select name="classes" class='validate'>
               <option value="" disabled selected>Select Class</option>
               <option value="1">Primary One</option>
               <option value="2">Primary Two</option>
@@ -68,26 +68,26 @@
 
           <!-- Marital Status -->
           <div class="input-field col s6" id="maritalstatus" style="display: none;">
-            <select name="maritalstatus">
+            <select name="maritalstatus" class='validate'>
               <option value="" disabled selected>Marital Status</option>
-              <option value="1">Single</option>
-              <option value="2">Married</option>
-              <option value="3">Divorced</option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Divorced">Divorced</option>
             </select>
           </div> 
 
           <!-- Gender -->
           <div class="input-field col s6" id="gender" style="display: none;">
-            <select name="gender">
+            <select name="gender" class='validate'>
               <option value="" disabled selected>Gender</option>
-              <option value="1">Female</option>
-              <option value="2">Male</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
             </select>
           </div> 
 
           <!-- Occupation -->
           <div class="input-field col s6" id="occupation" style="display: none;">
-            <input type="text" name="occupation" required />
+            <input  type="text" name="occupation" />
             <label for='occupation'>Occupation</label>
           </div>     
         </div>
