@@ -128,8 +128,8 @@ class UserModel extends CI_Model
 
       $this->db->select('FirstName, LastName, Email'); 
       $this->db->from('users');
-      $this->db->join('student', 'users.UserId = student.StudentId');
-      $this->db->join('teacher', 'teacher.ClassId = student.ClassId');
+      $this->db->join('students', 'users.UserId = students.StudentId');
+      $this->db->join('teacher_class', 'teacher_class.ClassId = students.ClassId');
       $query = $this->db->get();
 
       if($query->num_rows() > 0) {
@@ -169,12 +169,16 @@ class UserModel extends CI_Model
     /**
     *This function selects students
     **/
-
-    public function selectStudents($studName, $studPhone)
+    public function selectStudents()
     {
-      $this->db->select('(FirstName, LastName) as Name', 'PhoneNumber'); 
-      $this->db->from('users');
-      $this->db->where('Name='.$studName and 'PhoneNumber='.$studPhone and 'Status=Student');
+      // $this->db->select('(FirstName, LastName) as Name', 'PhoneNumber'); 
+      // $this->db->from('users');
+      // $this->db->where('Name='.$studName and 'PhoneNumber='.$studPhone and 'Status=Student');
+      $studName=$this->input->post('search_name');
+      $studPhone==$this->input->post('search_number');
+      $sql="SELECT (firstName, lastName) as Name, phoneNumber FROM users where Name LIKE '%$studName%' AND phoneNumber=$studPhone";
+      $sql2="SELECT firstName, lastName from users where firstName='Yvette' OR lastName='Umutari' AND phoneNumber=0785265906 UNION SELECT FirstName as Teacher from users INNER JOIN teacher_class ON users.UserId=teacher_class.TeacherId INNER JOIN students ON teacher_class.CLassId=students.CLassId";
+      $this->db->$sql; 
       $query = $this->db->get();
       if($query->num_rows() > 0) 
       {

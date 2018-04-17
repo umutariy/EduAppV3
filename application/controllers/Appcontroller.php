@@ -210,7 +210,7 @@ class Appcontroller extends CI_Controller
 	}
 
 	/**
-	* This function loads the parent dashboar
+	* This function loads the parent dashboarD
 	*/
 	public function parent_page($page='Parent')
 	{
@@ -226,6 +226,11 @@ class Appcontroller extends CI_Controller
 		//loads the footer
 		$this->load->view('templates/footer'); 
 
+	}
+
+	public function children()
+	{
+		
 	}
    
 }

@@ -18,35 +18,40 @@
       <form method="POST" action="">
         <div class='row'>
           <div class='input-field col s3'>
-            <input type="text" class='validate' name="search" placeholder="Search For Your Child Name">
-            </div>
-            <div class='input-field col s3'>
-            <input type="text" class='validate' name="search" placeholder="Search For Your PhoneNumber">
-            </div>
-            <div class='input-field col s3'>
+            <input type="text" class='validate' name="search_name" placeholder="Search For Your Child Name">
+          </div>
+          <div class='input-field col s3'>
+            <input type="text" class='validate' name="search_number" placeholder="Search For Your PhoneNumber">
+          </div>
+          <div class='input-field col s3'>
             <button type="submit" class="btn waves-effect waves-light" name="search">Search</button>
-            </div>
           </div>
         </div>
-        
-      </form>
-      <table class="striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Class</th>
-            <th>Teacher</th>
-            <th>Attendance</th>
-          </tr>
-        </thead>
-        
-        <!-- <tbody>
-          <tr>
-            <td>Yvette Umutari</td>
-            <td>Primary 2</td>
-            <td>Nathan Amanquah</td>
-            <td><a href=""> Present</a> / <a href=""> Absent</a></td>
-          </tr>
-        </tbody> -->
-      </table>
-      
+      </div>
+
+    </form>
+    <table class="striped" bgcolor="grey">
+      <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Class</th>
+        <th>Teacher</th>
+        <th>Attendance</th>
+      </tr>
+      <?php
+      foreach ( $table as $blog )
+      {
+        ?>
+        <tr>
+          <td><?php echo $blog->FirstName?></td>
+          <td><?php echo $blog->LastName?></td>
+          <td><?php echo $blog->Class?></td>
+          <td><?php echo $blog->Teacher?></td>
+          <td><?php echo $blog->Attendance?></td>
+        </tr>
+        <?php
+      }
+
+      ?>
+    </table>
+
