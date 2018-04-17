@@ -43,11 +43,13 @@ class MessageController extends CI_Controller
 	{
 
 		// Initializing database table columns.
+		$sender=$this->session->userdata('UserId');
 		$data = array(
 			'Title' => $this->input->post('title'),
 			'Subject' => $this->input->post('subject'),
 			'Message' => $this->input->post('msg'),
-			'Recipient' => $this->input->post('recipient')
+			'Sender_Id'=>$sender,
+			'Recipient_Id' => $this->input->post('recipient')
 			);
 
 			// Calling the setquestion model and its function.

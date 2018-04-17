@@ -122,7 +122,7 @@ class Appcontroller extends CI_Controller
 				//loads the header
 				$this->load->view('templates/header'); 
 				// Loads the Parent View Child Page
-				$this->load->view('parent_viewchild');
+				$this->load->view('parent_dashboard');
 				//loads the footer
 				$this->load->view('templates/footer');
 			}
