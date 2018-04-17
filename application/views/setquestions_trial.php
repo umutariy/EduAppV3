@@ -36,11 +36,6 @@
             </div>
           </div>
           <div class="row">
-            <!-- instructions -->
-            <!-- <div class='input-field col s6'>
-              <TextArea class="validate materialize-textarea" type="text" name='instruction' required> </TextArea>
-              <label for='instruction'>Instruction</label>
-            </div> -->
             <!-- Class -->
             <div class="input-field col s6">
               <select name="class">
@@ -55,23 +50,8 @@
               <input class='validate datepicker' type="text" name='due_date' required />
               <label for='due_date'>Due date</label>
             </div>
-
-            <!-- due time -->
-            <!-- <div class='input-field col s3'>
-              <input class='validate timepicker' type="text" name='due_time' required />
-              <label for='due_time'>Due time</label>
-            </div> -->
           </div>
           <div class="row">
-            <!-- Class -->
-           <!--  <div class="input-field col s6">
-              <select name="class">
-                <option value="" disabled selected>Classes</option>
-                <option value="1">Primary 1</option>
-                <option value="2">Primary 2</option>
-                <option value="3">Primary 3</option>
-              </select>
-            </div> -->
             <!-- add questions -->
             <div class="input-field col s6">
               <button class="btn btn-block waves-effect waves-light" type="submit" name="action" onclick="createQuestion()">Add Questions
@@ -96,8 +76,10 @@
                 <label for='question'>Question</label>
               </div>
               <div class="input-field col s3">
-                <input class='validate' type="radio" name="choice">
+                <input class='validate' type="text" name="choice" placeholder="option 1">
                 <label for="option 1">Option 1</label>
+                <input class='validate' type="text" name="choice" placeholder="option 2">
+                <label for="option 1">Option 2</label>
               </div>
             </div>
 
