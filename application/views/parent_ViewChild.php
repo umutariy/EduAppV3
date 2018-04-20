@@ -39,7 +39,7 @@
             <td><?php echo $lname;?></td>
             <td><?php echo $cname;?></td>
             <td><?php echo $tname;?></td>
-            <td><?php echo form_open("attendance"); ?><button class="btn waves-effect" type="submit" name="Present" value="<?php echo $tId;?>">Present</button> | <button class="btn waves-effect waves-light" type="submit" name="Absent">Absent</button></form></td>
+            <td><?php echo form_open("attendance"); ?><button class="btn waves-effect" type="submit" name="Present" value="<?php echo $tId;?>">Present</button> | <button class="btn waves-effect" type="submit" name="Absent" value="<?php echo $tId;?>">Absent</button></form></td>
         </tr>
     </table>
 

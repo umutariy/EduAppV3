@@ -203,10 +203,10 @@ class UserModel extends CI_Model
         $status="Present";
         $teacher=$this->input->post('Present');
       }
-      elseif ($this->input->post('Present')!=null) 
+      elseif ($this->input->post('Absent')!=null) 
       {
         $status="Absent";
-        $teacher=$this->input->post('Present');
+        $teacher=$this->input->post('Absent');
       }
       $parent=$this->session->userdata('UserId');
       $data=array(
