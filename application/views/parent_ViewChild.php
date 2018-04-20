@@ -15,21 +15,7 @@
       </nav>
       
       <!-- search button -->
-      <form method="POST" action="">
-        <div class='row'>
-          <div class='input-field col s3'>
-            <input type="text" class='validate' name="search_name" placeholder="Search For Your Child Name">
-          </div>
-          <div class='input-field col s3'>
-            <input type="text" class='validate' name="search_number" placeholder="Search For Your PhoneNumber">
-          </div>
-          <div class='input-field col s3'>
-            <button type="submit" class="btn waves-effect waves-light" name="search">Search</button>
-          </div>
-        </div>
-      </div>
-
-    </form>
+      
     <table class="striped" bgcolor="grey">
       <tr>
         <th>FirstName</th>
@@ -38,20 +24,21 @@
         <th>Teacher</th>
         <th>Attendance</th>
       </tr>
-      <?php
-      foreach ( $table as $blog )
-      {
+        <?php
+          foreach ( $table as $blog )
+          {
+      			$fname= $blog->FirstName;
+      			$lname = $blog->LastName;
+      			$cname = $blog->ClassName; 
+            $tname = $blog->Teacher_name;
+          }
         ?>
         <tr>
-          <td><?php echo $blog->FirstName?></td>
-          <td><?php echo $blog->LastName?></td>
-          <td><?php echo $blog->Class?></td>
-          <td><?php echo $blog->Teacher?></td>
-          <td><?php echo $blog->Attendance?></td>
+            <td><?php echo $fname;?></td>
+            <td><?php echo $lname;?></td>
+            <td><?php echo $cname;?></td>
+            <td><?php echo $tname;?></td>
+            <td><form method="POST" action="attendance"><button class="btn waves-effect" type="submit" name="Present">Present</button> | <button class="btn waves-effect waves-light" type="submit" name="Absent">Absent</button></form></td>
         </tr>
-        <?php
-      }
-
-      ?>
     </table>
 

@@ -76,21 +76,24 @@
                 <label for='question'>Question</label>
               </div>
               <div class="input-field col s3">
-                <input class='validate' type="text" name="choice" placeholder="option 1">
-                <label for="option 1">Option 1</label>
-                <input class='validate' type="text" name="choice" placeholder="option 2">
-                <label for="option 1">Option 2</label>
+                <input class='validate' type="text" name="choice1">
+                <label for="choice">Option 1</label>
+              </div>
+              <div class="input-field col s3">
+                <input class='validate' type="text" name="choice2">
+                <label for="option 2">Option 2</label>
               </div>
             </div>
 
             <!-- Fill in text questions -->
             <div id="text_input" class="input-field col s12">
               <div class="input-field col s12">
-                <input class='validate' type="text" name="question" id="option 1" required/>
-                <label for='Questions'>Question</label>
+                <input class='validate' type="text" name="fill_in" id="option 1" required/>
+                <label for='fill_in'>Question</label>
               </div>
               <div class="input-field col s12">
-                <input disabled value="Enter Your answer" class='validate' type="text" name="question" id="option 1">
+                <input value="" class='validate' type="text" name="question" id="option 1">
+                <label for="question">Enter Your answer</label>
               </div>
             </div>
           </div>

@@ -67,6 +67,8 @@ $route['getStudent']='appcontroller/get_students';
 $route['getClass']='appcontroller/getClass';
 $route['admin']='appcontroller/adminPage';
 $route['parent']='appcontroller/parent_page';
+$route['children']='appcontroller/children';
+
 
 // QuestionController
 $route['test']='questioncontroller/set_questions_trial';
@@ -81,4 +83,5 @@ $route['retrieve_message']='messagecontroller/retrieve_message';
 
 //testing controller
 $route['testing']='Unit_testing/index';
+$route['test_students']='Unit_testing/test_students';
 

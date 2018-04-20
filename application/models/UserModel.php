@@ -171,34 +171,39 @@ class UserModel extends CI_Model
     **/
     public function selectStudents()
     {
-      // $this->db->select('(FirstName, LastName) as Name', 'PhoneNumber'); 
-      // $this->db->from('users');
-      // $this->db->where('Name='.$studName and 'PhoneNumber='.$studPhone and 'Status=Student');
-      $studName=$this->input->post('search_name');
-      $studPhone==$this->input->post('search_number');
-      $sql="SELECT (firstName, lastName) as Name, phoneNumber FROM users where Name LIKE '%$studName%' AND phoneNumber=$studPhone";
-      $sql2="SELECT firstName, lastName from users where firstName='Yvette' OR lastName='Umutari' AND phoneNumber=0785265906 UNION SELECT FirstName as Teacher from users INNER JOIN teacher_class ON users.UserId=teacher_class.TeacherId INNER JOIN students ON teacher_class.CLassId=students.CLassId";
-      $this->db->$sql; 
+      $phoneNumber=$this->session->userdata('PhoneNumber');
+
+      $this->db->select('u.FirstName, u.LastName, c.ClassName, ut.FirstName AS Teacher_name'); 
+      $this->db->from('users AS u');
+      $this->db->join('students AS s', 'u.UserId = s.StudentId');
+      $this->db->join('class AS c', 'c.ClassId = s.ClassId');
+      $this->db->join('teacher_class as tc', 'c.ClassId = tc.ClassId');
+      $this->db->join('users AS ut', 'tc.TeacherId = ut.UserId AND tc.TeacherId = ut.UserId');
+      $this->db->where('u.PhoneNumber = '.$phoneNumber);
       $query = $this->db->get();
+        
       if($query->num_rows() > 0) 
       {
         $results = $query->result();
-        foreach ($results as $rows) 
-        {
-          echo '<tr>
-            <td>'.$rows["Name"].' </td>
-            <td>'.$rows["ClassName"].' </td>
-            <td>'.$rows["Teacher"].' </td>
-            <td>'.$rows["Status"].' </td>
-          <tr>
-          ';
-        }
-        //return $results;
+        return $results;
       }
       else
       {
         return false;
       }
+    }
+
+    public function attendance_status()
+    {
+      if (post('Present')) 
+      {
+        $this->db->insert('attendance',$data);
+      }
+      elseif (post('Absent'))
+      {
+        $this->db->insert('attendance',$data);
+      }
+      
     }
   }
 

@@ -230,8 +230,30 @@ class Appcontroller extends CI_Controller
 
 	public function children()
 	{
-		
+        //loads the header
+		$this->load->view('templates/header');
+        
+		$data['table'] = $this->usermodel->selectStudents();
+		//var_dump($data);
+        
+        //loads the view children Page
+        $this->load->view('parent_ViewChild', $data);
+        
+        //loads the footer
+		$this->load->view('templates/footer');
+            
 	}
-   
+   	
+   	public function attendance($status)
+   	{
+   		$this->usermodel->attendance_status();
+   		//loads the header
+   		$this->load->view('templates/header');
+   		//loads the view children Page
+        $this->load->view('attendance', $data);
+   		//loads the footer
+		$this->load->view('templates/footer');
+
+   	}
 }
 ?>

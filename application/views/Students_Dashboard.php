@@ -13,7 +13,6 @@
     
     <center>
       <h4 style="color: #0097a7">Your Dashboard</h4>
-      <fieldset>
       <div class="row z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 50px; solid #EEE;">
         <div class="col s3 m3" style="background-color: orange">
           <div class="card" >
@@ -53,5 +52,4 @@
           </div>
         </div>
       </div>
-</fieldset>
     </center>

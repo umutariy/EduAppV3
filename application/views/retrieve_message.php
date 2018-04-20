@@ -9,7 +9,6 @@
 			</div>
 		</nav>
 		<center>
-			<fieldset>
 				<div class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 50px; solid #EEE;">
 					<!-- <div class="section"></div> -->
 					<table class="striped">
@@ -23,7 +22,7 @@
 							?>
 							<tr>
 								<td><?php echo $blog->Date_Time?></td>
-								<td><a href="view/<?php echo $blog->MessageId; ?>"><?php echo $blog->Subject?></td></a> 
+                                <td><a href="view/<?php echo $blog->MessageId; ?>"><?php echo $blog->Subject?></a> </td>
 								<!-- work on the view/...? -->
 							</tr>
 							<?php
@@ -32,5 +31,4 @@
 						?>
 					</table>
 				</div>
-			</fieldset>
 		</center>
