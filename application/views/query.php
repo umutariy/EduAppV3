@@ -23,3 +23,6 @@ AND c.ClassId = tc.ClassId
 AND tc.TeacherId = ut.UserId
 WHERE u.PhoneNumber = '0785265906'
 AND u.FirstName LIKE '%yvette%'
+
+//taking attendance
+SELECT TeacherId, Attendance_Status, COUNT( attendance_status ) as Attendance FROM `attendance` group by Attendance_Status

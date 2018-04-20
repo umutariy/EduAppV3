@@ -68,6 +68,7 @@ $route['getClass']='appcontroller/getClass';
 $route['admin']='appcontroller/adminPage';
 $route['parent']='appcontroller/parent_page';
 $route['children']='appcontroller/children';
+$route['attendance']='appcontroller/attendance';
 
 
 // QuestionController

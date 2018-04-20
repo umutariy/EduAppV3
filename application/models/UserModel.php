@@ -173,7 +173,7 @@ class UserModel extends CI_Model
     {
       $phoneNumber=$this->session->userdata('PhoneNumber');
 
-      $this->db->select('u.FirstName, u.LastName, c.ClassName, ut.FirstName AS Teacher_name'); 
+      $this->db->select('u.FirstName, u.LastName, c.ClassName, ut.UserId, ut.FirstName AS Teacher_name'); 
       $this->db->from('users AS u');
       $this->db->join('students AS s', 'u.UserId = s.StudentId');
       $this->db->join('class AS c', 'c.ClassId = s.ClassId');
@@ -193,16 +193,28 @@ class UserModel extends CI_Model
       }
     }
 
+    /**
+    *This function inserts the attendance
+    **/
     public function attendance_status()
     {
-      if (post('Present')) 
+      if ($this->input->post('Present')!=null) 
       {
-        $this->db->insert('attendance',$data);
+        $status="Present";
+        $teacher=$this->input->post('Present');
       }
-      elseif (post('Absent'))
+      elseif ($this->input->post('Present')!=null) 
       {
-        $this->db->insert('attendance',$data);
+        $status="Absent";
+        $teacher=$this->input->post('Present');
       }
+      $parent=$this->session->userdata('UserId');
+      $data=array(
+        'ParentId'=>$parent,
+        'TeacherId'=>$teacher,
+        'Attendance_Status'=>$status
+       );
+      $this->db->insert('attendance',$data);
       
     }
   }

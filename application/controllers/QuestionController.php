@@ -47,11 +47,12 @@ class QuestionController extends CI_Controller
 		$data = array(
 			'Title' => $this->input->post('title'),
 			'Subject' => $this->input->post('subject'),
-			'Instructions' => $this->input->post('instruction'),
-			'Due date' => $this->input->post('due_date'),
-			'Due time' => $this->input->post('due_time'),
+			'Question' => $this->input->post('question'),
+			'QuestionType' => $this->input->post('question'),
+			'Correct_Answer' => $this->input->post('correct_answer'),
 			'Class' => $this->input->post('class'),
-			'Question' => $this->input->post('question')
+			'Due date' => $this->input->post('due_date')
+			
 			);
 
 			// Calling the setquestion model and its function.
