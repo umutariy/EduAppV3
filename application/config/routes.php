@@ -72,9 +72,10 @@ $route['attendance']='appcontroller/attendance';
 
 
 // QuestionController
-$route['test']='questioncontroller/set_questions_trial';
 $route['students_questions']='questioncontroller/quiz';
 $route['answer']='questioncontroller/answer_questions';
+$route['questions']='questioncontroller/submit_questions';
+
 
 // MessageController
 $route['message']='messagecontroller/message';

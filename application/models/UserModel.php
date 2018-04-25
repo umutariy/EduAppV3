@@ -217,6 +217,25 @@ class UserModel extends CI_Model
       $this->db->insert('attendance',$data);
       
     }
+
+    public function admin_attendance()
+    {
+      $db->select('TeacherId, Attendance_Status'); 
+      $db->count('attendance_status');
+      $db->from('attendance');
+      $db->groupby('Attendance_Status');
+      $query = $this->db->get();
+        
+      if($query->num_rows() > 0) 
+      {
+        $results = $query->result();
+        return $results;
+      }
+      else
+      {
+        return false;
+      }
+    }
   }
 
   ?>

@@ -17,23 +17,6 @@ class QuestionController extends CI_Controller
 		//$this->load->helper('dump');
 	}
 
-	/**
-	* This method loads the set_question view 
-	**/
-	public function set_questions_trial($page='viewQuestion')
-	{
-		// Capitalize the first letter
-		$data['title'] = ucfirst($page); 
-
-		//loads the header
-		$this->load->view('templates/header', $data); 
-
-		//Loading the SetQuestions Page
-		$this->load->view('setquestions_trial');
-
-        //loads the footer
-		$this->load->view('templates/footer'); 
-	}
 
 	/**
 	* This function submits the questions set by the teacher into th database
@@ -41,27 +24,14 @@ class QuestionController extends CI_Controller
 	public function submit_questions()
 	{
 		//loading the questions view
-		$this->load->view('setquestions_trial');
-		
-		// Initializing database table columns.
-		$data = array(
-			'Title' => $this->input->post('title'),
-			'Subject' => $this->input->post('subject'),
-			'Question' => $this->input->post('question'),
-			'QuestionType' => $this->input->post('question'),
-			'Correct_Answer' => $this->input->post('correct_answer'),
-			'Class' => $this->input->post('class'),
-			'Due date' => $this->input->post('due_date')
-			
-			);
+		// $this->load->view('setquestions_trial');
+		var_dump("hello");
+		// Calling the setquestion model and its function.
+		// $this->questionsmodel->set_questions(); 
 
-			// Calling the setquestion model and its function.
-		$this->questionsmodel->set_questions($data); 
 
-		echo "<script>alert('Form Submitted Successfully....!!!! ');</script>";
-
-			// Reloading after submit.
-		$this->load->view('setquestions_trial'); 
+		// Reloading after submit.
+		// $this->load->view('setquestions_trial'); 
 
 	}
 	

@@ -201,6 +201,8 @@ class Appcontroller extends CI_Controller
 		//loads the header
 		$this->load->view('templates/header', $data); 
 
+		$data['table'] = $this->usermodel->admin_attendance();
+
         //loads the Login Page
 		$this->load->view('admin');
 
