@@ -137,6 +137,17 @@ class Appcontroller extends CI_Controller
 				//loads the footer
 				$this->load->view('templates/footer');
 			}
+
+			//IF ADMIN
+			elseif ($this->session->Status=="Administrator") 
+			{
+				//loads the header
+				$this->load->view('templates/header'); 
+				// Loads the teacher View student Page
+				$this->load->view('administ');
+				//loads the footer
+				$this->load->view('templates/footer');
+			}
 		}
 		else 
 		{
@@ -204,7 +215,26 @@ class Appcontroller extends CI_Controller
 		$data['table'] = $this->usermodel->admin_attendance();
 
         //loads the Login Page
-		$this->load->view('admin');
+		$this->load->view('admin', $data);
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+
+	}
+
+	/**
+	* This function loads the admin view
+	*/
+	public function Administrator($page='Administrator')
+	{
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
+
+		//loads the header
+		$this->load->view('templates/header', $data); 
+
+        //loads the Login Page
+		$this->load->view('administ');
 
 		//loads the footer
 		$this->load->view('templates/footer'); 

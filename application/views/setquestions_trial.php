@@ -20,7 +20,7 @@
     <center>
       <h4 style="color: #0097a7">Set Questions</h4>
       <fieldset class="fieldset">
-        <?php echo form_open("questions"); ?>
+        <?php echo form_open("test_choice"); ?>
          
           <div class="row">
             <!-- title -->
@@ -53,56 +53,11 @@
 
           <!-- Add Question -->
            <div class="row">
-            <div class="input-field col s6">
-              <a id="option" class="btn" onclick="createQuestion()" style="margin-left: -50px" name="action"><i class="material-icons right">send</i> Add Questions</a>
-            </div>
+            <button class="btn btn-block waves-effect waves-light" type="submit" name="action2">
+            Add Questions
+              <i class="material-icons right">send</i>
+            </button>
           </div>
-
-          <!--************* Questions *****************-->
-          <div class="row input-field col s12" id="questions" style="display: none">
-            <!-- mutltiple choice -->
-            <div class="input-field col s6" id="btns">
-              <a id="option" class="btn" onclick="choice()" style="margin-left: -50px" name="multiple_choice"><i class="fa fa-dot-circle-o"></i> Choice</a>
-              <a id="text" class="btn" onclick="text_Input()" name="fill_in">Text</a>
-            </div>
-            
-            <!-- Multiple choice question -->
-            <div id="choice" class="input-field col s12">
-              <div class="input-field col s12">
-                <input class='validate' type="text" name="question" id="option 1" required/>
-                <label for='question'>Question</label>
-              </div>
-              <div class="input-field col s3">
-                <input class='validate' type="text" name="choice1">
-                <label for="choice1">Option 1</label>
-              </div>
-              <div class="input-field col s3">
-                <input class='validate' type="text" name="choice2">
-                <label for="choice2">Option 2</label>
-              </div>
-              <div class="input-field col s3">
-                <input class='validate' type="text" name="choice3">
-                <label for="choice3">Option 2</label>
-              </div>
-            </div>
-
-            <!-- Fill in text questions -->
-            <div id="text_input" class="input-field col s12">
-              <div class="input-field col s12">
-                <input class='validate' type="text" name="fill_in" id="option 1" required/>
-                <label for='fill_in'>Question</label>
-              </div>
-              <div class="input-field col s12">
-                <input value="" class='validate' type="text" name="question" id="option 1">
-                <label for="question">Enter Your answer</label>
-              </div>
-            </div>
-          </div>   
-
-          <button class="btn btn-block waves-effect waves-light" type="submit" name="action2">
-            Send Questions
-            <i class="material-icons right">send</i>
-          </button>
          <?php echo form_close(); ?>
       </fieldset>
     </center>

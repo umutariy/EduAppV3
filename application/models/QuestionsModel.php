@@ -54,32 +54,33 @@ class QuestionsModel extends CI_Model
 		$last_id = $this->db->insert_id();
 		
 		$data1=array(
-          	'QuestionId'=>$last_id,
-          	'Answer1'=>$this->input->post('choice1'),
+			'QuestionId'=>$last_id,
+			'Answer1'=>$this->input->post('choice1'),
 			'Answer2'=>$this->input->post('choice2'),
 			'Answer3'=>$this->input->post('choice3')
-		);
+			);
 		$this->db->insert('answers',$data1);
 		
-		var_dump($data);
+		// var_dump($data);
 	}
 
 	/**
 	* This function inserts the answers into the database
 	*/
-	public function answer_questions($data)
+	public function answer_questions()
 	{
-		$answer="";
-		$i=4;
-		while($i!==0)
-		{
-			$answer=$this->input->post($i);
-			$data = array(
-				'Question_Id' => $this->input->post('Question_Id'),
-				'answer' => $answer
-				);
+		$this->db->select('Question, Answer1, Answer2, Answer3');
+		$this->db->from('answers'); 
+		$this->db->join('questions','answers.QuestionId=questions.QuestionId');
+		$query = $this->db->get();
+		if($query->num_rows() > 0) {
+			$results = $query->result();
+			return $results;
 		}
-		$query=$this->db->insert('answer', $data);
+		else
+		{
+			return false;
+		}
 	}
 
 }

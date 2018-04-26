@@ -15,25 +15,12 @@
       </nav>
 
 
-  <div class="row">
+<!--   <div class="row">
     <div class="col s12 m7">
       <div class="card">
         <div class="card-image">
-          <!-- <img src="images/sample-1.jpg"> -->
-          <table>
-            <tr>
-              <?php
-                foreach ( $table as $blog )
-                {
-                  $attendance= $blog->Attendance_Status;
-                }
-              ?>
-            </tr>
-            <tr>
-              <td><?php echo $attendance;?></td>
-            </tr>
-
-          </table>
+          <img src="images/sample-1.jpg">
+          
           <span class="card-title">Card Title</span>
         </div>
         <div class="card-content">
@@ -45,5 +32,27 @@
         </div>
       </div>
     </div>
-  </div>
-            
+  </div> -->
+  <table class="striped" bgcolor="grey">
+    <tr>
+      <th>TeacherId</th>
+      <th>Name</th>
+      <th>Attendance_Status</th>
+      <th>Attendance</th>
+
+    </tr>
+    <?php
+    foreach ( $table as $blog )
+    {
+      ?>
+
+      <tr>
+      <td><?php echo $blog->TeacherId;?></td>
+        <td><?php echo $blog->Name;?></td>
+        <td><?php echo $blog->Attendance_Status;?></td>
+        <td><?php echo $blog->Attendance;?></td>
+      </tr>
+      <?php
+    }
+      ?>
+    </table>

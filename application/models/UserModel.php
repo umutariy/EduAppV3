@@ -218,12 +218,14 @@ class UserModel extends CI_Model
       
     }
 
+    //check attendance
     public function admin_attendance()
     {
-      $db->select('TeacherId, Attendance_Status'); 
-      $db->count('attendance_status');
-      $db->from('attendance');
-      $db->groupby('Attendance_Status');
+      $this->db->select('TeacherId, concat(FirstName, LastName) as Name, Attendance_Status , count(attendance_status) as Attendance'); 
+      // $this->db->count('attendance_status as Attendance');
+      $this->db->from('attendance');
+      $this->db->join('users','users.UserId=attendance.TeacherId');
+      $this->db->group_by('Attendance_Status');
       $query = $this->db->get();
         
       if($query->num_rows() > 0) 

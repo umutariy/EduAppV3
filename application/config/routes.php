@@ -66,15 +66,20 @@ $route['logout']='appcontroller/logout';
 $route['getStudent']='appcontroller/get_students';
 $route['getClass']='appcontroller/getClass';
 $route['admin']='appcontroller/adminPage';
+$route['administ']='appcontroller/administ';
 $route['parent']='appcontroller/parent_page';
 $route['children']='appcontroller/children';
 $route['attendance']='appcontroller/attendance';
 
 
 // QuestionController
-$route['students_questions']='questioncontroller/quiz';
+$route['students_questions']='questioncontroller/answer_questions';
 $route['answer']='questioncontroller/answer_questions';
 $route['questions']='questioncontroller/submit_questions';
+$route['test']='questioncontroller/setquestions';
+$route['test_choice']='questioncontroller/choice';
+$route['test_multi']='questioncontroller/multiple_choice';
+$route['test_fillin']='questioncontroller/fillin_blank';
 
 
 // MessageController

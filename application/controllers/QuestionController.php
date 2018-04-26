@@ -17,21 +17,80 @@ class QuestionController extends CI_Controller
 		//$this->load->helper('dump');
 	}
 
+	/**
+	* This function displays questions form
+	**/
+	public function setquestions($page='Questions')
+	{
+		//loads the header
+		$this->load->view('templates/header', $page);
+
+		//loading the questions view
+		$this->load->view('setquestions_trial');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+		
+	}
 
 	/**
-	* This function submits the questions set by the teacher into th database
+	* This function displays questions form
+	**/
+	public function choice($page='Questions_Type')
+	{
+		//loads the header
+		$this->load->view('templates/header', $page);
+
+		//loading the questions view
+		$this->load->view('test');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+		
+	}
+
+	/**
+	* This function displays questions form
+	**/
+	public function multiple_choice($page='Questions')
+	{
+		//loads the header
+		$this->load->view('templates/header', $page);
+
+		//loading the questions view
+		$this->load->view('test2');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+		
+	}
+
+	/**
+	* This function displays questions form
+	**/
+	public function fillin_blank($page='Questions')
+	{
+		//loads the header
+		$this->load->view('templates/header', $page);
+
+		//loading the questions view
+		$this->load->view('test3');
+
+		//loads the footer
+		$this->load->view('templates/footer'); 
+		
+	}
+
+	/**
+	* This function submits the questions set by the teacher into the database
 	**/
 	public function submit_questions()
 	{
-		//loading the questions view
-		// $this->load->view('setquestions_trial');
-		var_dump("hello");
+		
 		// Calling the setquestion model and its function.
-		// $this->questionsmodel->set_questions(); 
-
-
-		// Reloading after submit.
-		// $this->load->view('setquestions_trial'); 
+		$this->questionsmodel->set_questions(); 
+		//loading the questions view
+		$this->load->view('setquestions_trial');
 
 	}
 	
@@ -54,17 +113,19 @@ class QuestionController extends CI_Controller
 	/**
 	* This function loads the teacher_setQuestions dashboard which allows data insertion in the database
 	*/
-	public function answer_questions()
+	public function answer_questions($page='Answers')
 	{
-		
-		//Setting values for database table columns
-
-		
+		// Capitalize the first letter
+		$data['title'] = ucfirst($page); 
+		//loads the header
+		$this->load->view('templates/header', $data); 
 		//Transfering data to Model
-		$this->questionsmodel->answer_questions($data);
-		$data['message'] = 'Data Inserted Successfully';
+		$data['data'] = $this->questionsmodel->answer_questions();
+
 		//Loading View
-		$this->load->view('students_dashboard',$data);
+		$this->load->view('students_questions',$data);
+		//loads the footer
+		$this->load->view('templates/footer');
 	}
 }
 ?>

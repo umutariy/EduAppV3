@@ -23,7 +23,7 @@
     </div>
     <div>
     <form method="POST" action="<?php echo base_url().'index.php/children'?>">
-      <button class="btn btn-block waves-effect " type="submit" >Add Your Child</button>
+      <button class="btn btn-block waves-effect " type="submit" >Take Attendance</button>
     </form>
       
     </div>
